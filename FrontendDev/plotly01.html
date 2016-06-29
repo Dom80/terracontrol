@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script language="javascript" type="text/javascript" src="scripts/plotly01.js"></script>
+	<script type="text/javascript">
+	$( document ).ready(function () {
+		renderTemp(25.5);
+		renderHydro(85);
+		renderHistory();
+	});		
+	</script>
+	<title>Plotly Test</title>
+</head>
+<body>
+<div>
+	<div id="temp" style="width:300px;height:300px"></div>
+	<div id="hydro" style="width:200px;height:250px;"></div>
+</div>
+<div id="history" style="width:600px;height:250px;"></div>
+</body>
+</html>
