@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 	$( document ).ready(function () {
 		
-		<% for (var i = 0; i < model.environments.length; i++) {% >
+		<% for (var i = 0; i < model.environments.length; i++) {%>
 			renderTemp('temp'+ <%= i %>, <%= model.environments[i].temp %> );
 			renderHydro('hydro'+ <%= i %>, <%= model.environments[i].temp %> );
 			renderHistory('history'+ <%= i %>);
@@ -22,7 +22,7 @@
 <body>
 <h1>TerraControl is alive.</h1>
 <br/>
-	<% for (var i = 0; i < model.environments.length; i++) {% >
+	<% for (var i = 0; i < model.environments.length; i++) {%>
 	<div>
 		<h2><%= model.environments[i].name %></h2>
 		<h3>Timestamp: <%= model.environments[i].timestamp %></h3>
