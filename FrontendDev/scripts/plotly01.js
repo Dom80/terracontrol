@@ -1,4 +1,4 @@
-function renderTemp(tempData){
+function renderTemp(divId, tempData){
 	var level = tempData;
   
   var coldValue = 0;
@@ -51,18 +51,18 @@ var layout = {
   title: 'Thermometer: ' + level + ' C'
 };
 
-Plotly.newPlot('temp', data, layout);
+Plotly.newPlot(divId, data, layout);
 }
 
 
-function renderHydro(data){
+function renderHydro(divId, data){
 // The hydro measurement
 var level = data;
 
 // Trig to calc meter point
 var degrees = 100 - level,
      radius = .5;
-var radians = degrees * Math.PI / 180;
+var radians = degrees * Math.PI / 100;
 var x = radius * Math.cos(radians);
 var y = radius * Math.sin(radians);
 
@@ -87,9 +87,9 @@ var data = [{ type: 'scatter',
             '', '', ''],
   textinfo: 'text',
   textposition:'inside',
-  marker: {colors:['rgba(14, 127, 0, .5)', 'rgba(110, 154, 22, .5)',
-                         'rgba(202, 209, 95, .5)', 'rgba(206, 207, 120, .5)',
-                         'rgba(210, 206, 145, .5)', 'rgba(232, 226, 202, .5)',
+  marker: {colors:['rgba(0, 255, 125, .8)', 'rgba(125, 225, 0, .8)',
+                         'rgba(255, 255, 0, .8)', 'rgba(255, 185, 0, .8)',
+                         'rgba(255, 125, 0, .8)', 'rgba(255, 0, 0, .8)',
                          'rgba(255, 255, 255, 0)']},
   labels: ['84-100 %', '68-83 %', '51-67 %', '34-50 %', '18-33 %', '0-17 %', ''],
   hoverinfo: 'label',
@@ -116,11 +116,11 @@ var layout = {
              showgrid: false, range: [-1, 1]}
 };
 
-Plotly.newPlot('hydro', data, layout);
+Plotly.newPlot(divId, data, layout);
 }
 
-function renderHistory(data){
-	TESTER = document.getElementById('history');
+function renderHistory(divId, data){
+	TESTER = document.getElementById(divId);
 	Plotly.plot( TESTER, [{
 	x: [1, 2, 3, 4, 5],
 	y: [1, 2, 4, 8, 16] }], {
