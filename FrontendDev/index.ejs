@@ -11,7 +11,7 @@
 		
 		<% for (var i = 0; i < model.environments.length; i++) {%>
 			renderTemp('temp'+ <%= i %>, <%= model.environments[i].temp %> );
-			renderHydro('hydro'+ <%= i %>, <%= model.environments[i].temp %> );
+			renderHydro('hydro'+ <%= i %>, <%= model.environments[i].hum %> );
 			renderHistory('history'+ <%= i %>);
 		 <%  } %>
 
